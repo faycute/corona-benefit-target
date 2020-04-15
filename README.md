@@ -1,6 +1,7 @@
-【コロナ】DockerとVue.jsで30万円給付の対象になるか判定するアプリを作った
-
 # 概要
+【コロナ】DockerとVue.jsで30万円給付の対象になるか判定するアプリ
+
+# 手順
 - Docker上にVueプロジェクトを作成する
 - 開発
 - Netrifyを使ってdeploy及び公開する
@@ -21,20 +22,6 @@ $ docker-compose up -d
 $ docker-compose exec app sh
 ### コンテナ上でVueプロジェクトの作成（with TypeScript）
 /app # vue create .
-
-#### routeなし
-Vue CLI v4.3.1
-? Generate project in current directory? Yes
-
-Vue CLI v4.3.1
-? Please pick a preset: Manually select features
-? Check the features needed for your project: Babel, TS, Linter
-? Use class-style component syntax? Yes
-? Use Babel alongside TypeScript (required for modern mode, auto-detected polyfills, transpiling JSX)? Yes
-? Pick a linter / formatter config: Basic
-? Pick additional lint features: Lint on save
-? Where do you prefer placing config for Babel, ESLint, etc.? In dedicated config files
-? Save this as a preset for future projects? No
 
 ##### routerあり
 Vue CLI v4.3.1
@@ -66,15 +53,13 @@ tsconfig.jsonのtypesにvuetifyを追加
 ```
 
 ### ローカルサーバーを起動
-/app npm run serve
+/app # npm run serve
 
-デフォルトで下記ポートになっているが、これはDocker内での話です。
-http://localhost:8080
-アクセスするには、docker-compose.ymlで8080ポートにマッピングした3000ポートを使用します。
-http://localhost:3000
-
-# 開発
+http://localhost:5555 にアクセス
 
 
 # Netrifyを使ってdeploy及び公開する
 /app # npm run build
+
+Netrifyにサインアップして、distディレクトリをドラッグ＆ドロップ
+
