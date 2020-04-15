@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app: # Dockerが構築するNetworkにおけるホスト名（別コンテナから繋げたい場合、http://vue-address:8080 といった感じ
+    build: . # Dockerfileがあるディレクトリ
+    ports: # ホストのポートとコンテナのポートを繋げる(http://localhost:3000 でコンテナの8080番に繋がる)
+      - 5555:8080
+    volumes:
+      - .:/app # コンテナのディレクトリをホスト（Mac）のディレクトリにマウント（ホスト：コンテナ）
+    stdin_open: true # docker run -iオプションに相当
+    tty: true # コンテナ内の標準出力とホストの出力を繋げる。docker run -tオプションに対応。これがないとコンテナがすぐ終了してしまうため、基本的にtrue
+    command: /bin/sh
