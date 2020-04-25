@@ -1,5 +1,5 @@
 # 概要
-【コロナ】DockerとVue.jsで30万円給付の対象になるか判定するアプリ
+【コロナ】DockerとVue.jsで30万円給付の対象になるか判定するアプリ  
 https://corona-benefit-target.netlify.com/
 
 # 手順
